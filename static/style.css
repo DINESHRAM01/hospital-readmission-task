@@ -1,0 +1,131 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e6f2ff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Two-panel layout */
+.container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Left side with doctor illustration */
+.left-panel {
+    width: 50%;
+    background: linear-gradient(to bottom right, #d2f4ff, #c8eaff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.left-panel img {
+    max-width: 100%;
+    height: auto;
+}
+
+.left-panel h2 {
+    margin-top: 20px;
+    color: #0077cc;
+}
+
+/* Right side form */
+.form-card {
+    width: 50%;
+    padding: 40px 30px;
+    background-color: #ffffff;
+}
+
+.form-card h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #004aad;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}
+
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+.input-group input:focus {
+    border-color: #0077cc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #004aad;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #003080;
+}
+
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: green;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-panel,
+    .form-card {
+        width: 100%;
+    }
+
+    .left-panel {
+        padding: 30px 20px;
+    }
+
+    .form-card {
+        padding: 30px 20px;
+    }
+}

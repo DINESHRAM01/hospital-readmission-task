@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Readmission Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <!-- 🧑‍⚕️ Left Panel (Image + Welcome) -->
+        <div class="left-panel">
+            <img src="{{ url_for('static', filename='doctor1.png') }}" alt="Doctor Illustration">
+            <h2>Welcome to Readmission Predictor</h2>
+        </div>
+
+        <!-- 🩺 Right Panel (Form Card) -->
+        <div class="form-card">
+            <h2>🩺 Hospital Readmission Predictor</h2>
+            <form action="/predict" method="POST">
+
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="number" name="age" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="time_in_hospital">Time in Hospital</label>
+                    <input type="number" name="time_in_hospital" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="n_lab_procedures">Number of Lab Procedures</label>
+                    <input type="number" name="n_lab_procedures" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="n_procedures">Number of Procedures</label>
+                    <input type="number" name="n_procedures" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="n_medications">Number of Medications</label>
+                    <input type="number" name="n_medications" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="n_outpatient">Outpatient Visits</label>
+                    <input type="number" name="n_outpatient" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="n_inpatient">Inpatient Visits</label>
+                    <input type="number" name="n_inpatient" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="n_emergency">Emergency Visits</label>
+                    <input type="number" name="n_emergency" required>
+                </div>
+
+                <button type="submit">Predict</button>
+
+                {% if prediction_text %}
+                <p class="result">{{ prediction_text | safe }}</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
